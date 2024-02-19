@@ -16,9 +16,7 @@ model_msp_pool <- function(arms_id,
                            flow_E, 
                            flow_N) {
   library(knitr)
-  library(kableExtra) 
   library(gt)
-  library(htmlTable)
   library(dplyr)
   library(tidyverse)
   # meta_and_data <- targets::tar_read("metadata_data")
@@ -724,7 +722,7 @@ model_msp_pool <- function(arms_id,
     # Data_train  <- Data.RF # Wit h no split
     
     # convert training data to h2o object
-    # train_h2o <- as.h2o(Data_train)
+    train_h2o <- as.h2o(Data_train)
     # set the response column to the given variable
     response <- names(Data_train[1])
     # set the predictor names
@@ -746,7 +744,7 @@ model_msp_pool <- function(arms_id,
     hyper_grid <- list(
       ntrees = seq(50, 1000, by = 50),
       mtries = seq(2, 9, by = 1),
-      min_rows = c(1, 3, 5, 10),
+      min_rows = c(1, 3, 5),
       max_depth = c(5, 10, 20, 30, 40, 50),  # https://crunchingthedata.com/max-depth-in-random-forests/
       sample_rate = c(.55, .632, .70, .80)
     )
@@ -875,8 +873,13 @@ model_msp_pool <- function(arms_id,
       rm(Data.RF, h2o_rf1, hyper_grid, response, predictors, n_features, search_criteria, random_grid, random_grid_perf, best_grid, best_model_h2o_rf, best_model, metrics, Environment.h2o, pred_h2o)
     }
     
+    
+    Species <- as.vector(Sp[, i])
+    df <- cbind.data.frame(Species, Environment)
+    df <- lapply(df, as.vector)
+    Data.RF  <- as.h2o(df)
     # Start up h2o
-    Data.RF <- as.h2o(cbind.data.frame(Species = Sp[, i], Environment))
+    # Data.RF <- as.h2o(cbind.data.frame(Species = Sp[, i], Environment))
     
     # Split the dataset into a train and valid set
     Data.split <- h2o.splitFrame(data = Data.RF, ratios = 0.8, seed = 123)
@@ -975,7 +978,6 @@ model_msp_pool <- function(arms_id,
   }
   
   # save.image(file = "outputs/RDATA/my_work_space_RF.RData")
-  
   
   names(MetricsList) <- colnames(Sp)
   names(VariableImportanceList) <- colnames(Sp)

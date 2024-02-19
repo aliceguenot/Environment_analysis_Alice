@@ -16,9 +16,7 @@ model <- function(arms_id,
                   flow_E, 
                   flow_N) {
   library(knitr)
-  library(kableExtra)
   library(gt)
-  library(htmlTable)
   library(dplyr)
   library(tidyverse)
   # meta_and_data <- targets::tar_read("metadata_data")
