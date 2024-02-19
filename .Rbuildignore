@@ -1,0 +1,9 @@
+^renv$
+^renv\.lock$
+^data$
+^outputs$
+^figures$
+^analyses$
+^make\.R$
+^.*\.Rproj$
+^\.Rproj\.user$

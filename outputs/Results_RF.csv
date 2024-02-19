@@ -1,0 +1,13 @@
+;Wave height deviation;Formula;R2;Number of trees;Sample rate
+Foraminifera;0,03;y = 0.3*x + 4.75;0,34;21;0,80
+Bryozoa;0,51;y = 0.4*x + 6.41;0,41;17;0,80
+Porifera;0,00;y = 0.22*x + 5.91;0,18;16;0,70
+Ascidiascea;0,36;y = 0.81*x + 0.66;0,86;19;0,55
+Annelida;0,08;y = 0.59*x + 5.4;0,55;23;0,63
+Bivalvia;0,36;y = 0.24*x + 1.34;0,20;22;0,70
+Biofilms;0,89;y = 0.58*x + 2.14;0,51;25;0,63
+Other. algae;0,01;y = 0.58*x + 0.18;0,55;42;0,55
+Hydrozoa;0,02;y = 0.25*x + 3.07;0,13;24;0,63
+Cirripedia;0,40;y = 0.27*x + 0.04;0,42;22;0,55
+Cyanobacteria;0,30;y = 0.13*x + 1.92;0,28;20;0,55
+Crustose coralline algae;0,22;y = 0.75*x + 5.1;0,78;37;0,55

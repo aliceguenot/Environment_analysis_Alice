@@ -1,0 +1,47 @@
+Package: environment_analysis
+Type: Package
+Title: The Title of the Project
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given   = "Baptiste",
+           family  = "Frattini",
+           role    = c("aut", "cre", "cph"),
+           email   = "baptiste.frattini22@gmail.com",
+           comment = c(ORCID = "")))
+Description: A paragraph providing a full description of the project (on 
+    several lines...)
+URL: https://github.com/BaptisteFrattini/intra_arms
+BugReports: https://github.com/BaptisteFrattini/intra_arms/issues
+License: GPL-2
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.2
+Imports: 
+    raster,
+    targets,
+    ncdf4,
+    here,
+    tidyverse,
+    ggplot2,
+    wesanderson,
+    cowplot,
+    vegan,
+    pvclust,
+    clue,
+    dendextend,
+    maptree,
+    ggdendro,
+    psych,
+    corrplot,
+    zoo,
+    forcats,
+    mvabund,
+    MASS,
+    bestNormalize,
+    usdm,
+    adespatial,
+    visNetwork,
+    gt
+    
+    
+
